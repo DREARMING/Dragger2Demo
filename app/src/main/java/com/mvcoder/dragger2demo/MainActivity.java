@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.mvcoder.dragger2demo.inherit.bean.Son;
 import com.mvcoder.dragger2demo.simple.bean.Man;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,10 +43,13 @@ public class MainActivity extends AppCompatActivity {
                 btQualifierInject();
                 break;
             case R.id.btLazy:
+                testInhert();
                 break;
             case R.id.bScope:
+                testScope();
                 break;
             case R.id.btDependency:
+                testDependency();
                 break;
         }
     }
@@ -58,6 +62,21 @@ public class MainActivity extends AppCompatActivity {
     private void btQualifierInject(){
         com.mvcoder.dragger2demo.qualifier.bean.Man man = new com.mvcoder.dragger2demo.qualifier.bean.Man();
         man.getCar().go();
+    }
+
+    private void testScope(){
+        com.mvcoder.dragger2demo.scope.bean.Man man = new com.mvcoder.dragger2demo.scope.bean.Man();
+        man.getCar().go();
+    }
+
+    private void testDependency(){
+        com.mvcoder.dragger2demo.dependency.bean.Man man = new com.mvcoder.dragger2demo.dependency.bean.Man();
+        man.getCar().go();
+    }
+
+    private void testInhert(){
+        Son son = new Son();
+        son.drive();
     }
 
 }

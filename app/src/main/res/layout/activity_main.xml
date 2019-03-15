@@ -25,7 +25,7 @@
         android:id="@+id/btLazy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lazy注入测试"
+        android:text="inherit注入测试"
         />
 
     <Button
