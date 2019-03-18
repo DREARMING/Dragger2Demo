@@ -42,4 +42,11 @@
         android:text="依赖注入测试"
         />
 
+    <Button
+        android:id="@+id/btAndroidDagger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="android dagger 注入测试"
+        />
+
 </LinearLayout>

@@ -1,10 +1,12 @@
 package com.mvcoder.dragger2demo;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.mvcoder.dragger2demo.android.activity.InjectActivity;
 import com.mvcoder.dragger2demo.inherit.bean.Son;
 import com.mvcoder.dragger2demo.simple.bean.Man;
 
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     Button bScope;
     @BindView(R.id.btDependency)
     Button btDependency;
+    @BindView(R.id.btAndroidDagger)
+    Button btAndroidDagger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btInject, R.id.btQualifier, R.id.btLazy, R.id.bScope, R.id.btDependency})
+    @OnClick({R.id.btInject, R.id.btQualifier, R.id.btLazy, R.id.bScope, R.id.btDependency,R.id.btAndroidDagger})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btInject:
@@ -51,7 +55,15 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btDependency:
                 testDependency();
                 break;
+            case R.id.btAndroidDagger:
+                testAndroidDagger();
+                break;
         }
+    }
+
+    private void testAndroidDagger() {
+        Intent intent = new Intent(this, InjectActivity.class);
+        startActivity(intent);
     }
 
     private void btSimpleInject(){
